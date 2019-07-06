@@ -7,7 +7,7 @@
 	    {{! Page Meta }}
 	    <title>{{meta_title}}</title>
 	    <meta name="description" content="{{meta_description}}" />
-	    <link rel="shortcut icon" href="{{@blog.logo}}"/>
+	    <link rel="shortcut icon" href="{{@site.logo}}"/>
 			{{! Styles }}
 	    <link href='//fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 			<link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
@@ -39,10 +39,10 @@
 </script>    
 	</head>
 	<body class="{{body_class}}">
-		<header id="header" {{#if @blog.cover_image}}style="background-image: url('{{@blog.cover_image}}')"{{/if}}>
-			{{#if @blog.logo}}<a id="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-			<h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
-			<p>{{@blog.description}}</p>
+		<header id="header" {{#if @site.cover_image}}style="background-image: url('{{@site.cover_image}}')"{{/if}}>
+			{{#if @site.logo}}<a id="logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>{{/if}}
+			<h1><a href="{{@site.url}}">{{@site.title}}</a></h1>
+			<p>{{@site.description}}</p>
 			{{> follow}}
 			{{navigation}}
 		</header>
