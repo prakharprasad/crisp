@@ -6,14 +6,17 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	    {{! Page Meta }}
 	    <title>{{meta_title}}</title>
+	    <meta name="description" content="{{meta_description}}" />
+	    <link rel="shortcut icon" href="{{@blog.logo}}"/>
 			{{! Styles }}
-	    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700' rel='stylesheet' type='text/css'>
+	    <link href='//fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 			<link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-			<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/sunburst.min.css">
 			<link rel="stylesheet" type="text/css" href="{{asset '/styles/crisp.css'}}">
 			{{! Responsive Meta Tags }}
 	    <meta name="HandheldFriendly" content="True" />
+	    <meta name="MobileOptimized" content="320" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 			<!--[if lt IE 9]>
@@ -22,6 +25,18 @@
 			<![endif]-->
 			{{{block "head"}}}
 	    {{ghost_head}}
+	<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.prakharprasad.com/";
+    _paq.push(['setTrackerUrl', u+'js/']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'/js/'; s.parentNode.insertBefore(g,s);
+  })();
+</script>    
 	</head>
 	<body class="{{body_class}}">
 		<header id="header" {{#if @blog.cover_image}}style="background-image: url('{{@blog.cover_image}}')"{{/if}}>
@@ -34,11 +49,9 @@
 		<main id="content">
 			{{{body}}}
 		</main>
-		<footer id="footer">
-			<section id="footer-message">&copy; {{date format='YYYY'}} {{@blog.title}}. All rights reserved. Powered by <a href="http://ghost.org" target="_blank">Ghost</a>. <a href="https://github.com/kathyqian/crisp" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
-		</footer>
 	{{ghost_foot}}
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	
 	<script>hljs.initHighlightingOnLoad();</script>
 	</body>
 </html>
